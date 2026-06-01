@@ -15,9 +15,12 @@ def create_app():
         static_url_path=""
     )
 
+    origins = os.getenv(
+        "ALLOWED_ORIGINS",
+        "http://localhost:5173"
+    ).split(",")
 
-
-    CORS(app, origins=os.getenv("ALLOWED_ORIGIN"))
+    CORS(app, origins=origins)
 
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 
