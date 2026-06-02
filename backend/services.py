@@ -63,13 +63,13 @@ def get_all(user_id, is_admin):
     finally:
         conn.close()
 
-def get_insights(user_id, is_admin_or_viewer=False):
+def get_insights(user_id, is_admin=False):
     conn = get_conn()
     try:
         cursor = conn.cursor()
 
             # Total income
-        if is_admin_or_viewer:
+        if is_admin:
             cursor.execute("""
                 SELECT COALESCE(SUM(amount), 0)
                 FROM transactions
@@ -84,7 +84,7 @@ def get_insights(user_id, is_admin_or_viewer=False):
         total_income = cursor.fetchone()[0]
 
             # Total expense
-        if is_admin_or_viewer:
+        if is_admin:
             cursor.execute("""
                 SELECT COALESCE(SUM(amount), 0)
                 FROM transactions
@@ -105,7 +105,7 @@ def get_insights(user_id, is_admin_or_viewer=False):
         spending_ratio = (total_expense / total_income * 100) if total_income > 0 else 0
 
             # Category-wise expense
-        if is_admin_or_viewer:
+        if is_admin:
             cursor.execute("""
                 SELECT category, SUM(amount)
                 FROM transactions
@@ -132,7 +132,7 @@ def get_insights(user_id, is_admin_or_viewer=False):
             }
 
             # Monthly trend
-        if is_admin_or_viewer:
+        if is_admin:
             cursor.execute("""
                 SELECT strftime('%Y-%m', date) as month,
                     SUM(CASE WHEN type='income' THEN amount ELSE 0 END),
