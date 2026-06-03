@@ -67,7 +67,7 @@ def get_insights(user_id, is_admin=False):
     conn = get_conn()
     try:
         cursor = conn.cursor()
-
+ 
             # Total income
         if is_admin:
             cursor.execute("""
