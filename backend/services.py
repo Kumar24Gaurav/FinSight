@@ -600,6 +600,3 @@ def delete_user(user_id):
 # ====================================== ROLE ============================================#
 def is_admin():
     return get_jwt().get("role") == "admin"
-
-def is_analyst():
-    return get_jwt().get("role") == "analyst"
