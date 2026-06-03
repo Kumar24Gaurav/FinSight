@@ -47,21 +47,21 @@ def create(data, user_id):
     finally:
         conn.close()
 
-def get_all(user_id, is_admin):
-    conn = get_conn()
-    try:
-        cursor = conn.cursor()
+# def get_all(user_id, is_admin):
+#     conn = get_conn()
+#     try:
+#         cursor = conn.cursor()
 
-        if is_admin:
-            cursor.execute("SELECT * FROM transactions ORDER BY date DESC")
-        else:
-            cursor.execute("SELECT * FROM transactions WHERE user_id = ? ORDER BY date DESC", (user_id,))
+#         if is_admin:
+#             cursor.execute("SELECT * FROM transactions ORDER BY date DESC")
+#         else:
+#             cursor.execute("SELECT * FROM transactions WHERE user_id = ? ORDER BY date DESC", (user_id,))
 
-        rows = cursor.fetchall()
+#         rows = cursor.fetchall()
 
-        return [format_transaction(row) for row in rows]
-    finally:
-        conn.close()
+#         return [format_transaction(row) for row in rows]
+#     finally:
+#         conn.close()
 
 def get_insights(user_id, is_admin=False):
     conn = get_conn()
