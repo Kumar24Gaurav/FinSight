@@ -8,7 +8,7 @@ get_jwt_identity
 import auth
 from services import (
 create,
-get_all,
+# get_all,
 get_insights,
 filter_transactions,
 update,
@@ -61,17 +61,17 @@ def login():
     })
 # ========================= TRANSACTIONS =========================
 
-@api.route("/transactions", methods=["GET"])
-@jwt_required()
-def list_transactions():
-    user_id = int(get_jwt_identity())
+# @api.route("/transactions", methods=["GET"])
+# @jwt_required()
+# def list_transactions():
+#     user_id = int(get_jwt_identity())
 
-    result = get_all(
-        user_id,
-        is_admin()
-    )
+#     result = get_all(
+#         user_id,
+#         is_admin()
+#     )
 
-    return jsonify(result)
+#     return jsonify(result)
 
 @api.route("/transactions", methods=["POST"])
 @jwt_required()
