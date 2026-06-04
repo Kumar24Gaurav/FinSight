@@ -10,6 +10,8 @@ function Login() {
 
     const [error, setError] = useState("");
 
+    const [loading, setLoading] = useState(false);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -21,6 +23,8 @@ function Login() {
         e.preventDefault();
 
         setError("");
+
+        setLoading(true);
 
         try {
             const response = await api.post("/login", formData);
@@ -40,6 +44,8 @@ function Login() {
                 err.response?.data?.error ||
                 "Login failed"
             );
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -101,9 +107,10 @@ function Login() {
 
                     <button
                         type="submit"
+                        disabled={loading}
                         className="cursor-pointer w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
                     >
-                        Sign In
+                        {loading ? "Logging in..." : "Login"}
                     </button>
                 </form>
 
