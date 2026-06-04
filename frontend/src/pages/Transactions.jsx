@@ -217,7 +217,7 @@ function Transactions() {
                 <div className="ml-auto">
                     <button
                         onClick={() => setShowForm(!showForm)}
-                        className="flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
+                        className="cursor-pointer flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
                     >
                         <FaPlus size={18} />
                         <span>Add Transaction</span>
@@ -286,7 +286,7 @@ function Transactions() {
 
                         <button
                             onClick={handleSubmit}
-                            className='bg-green-600 text-white px-5 py-3 rounded-lg mt-4 hover:bg-green-700'
+                            className='cursor-pointer bg-green-600 text-white px-5 py-3 rounded-lg mt-4 hover:bg-green-700'
                         >
                             Save Transaction
                         </button>
@@ -352,7 +352,7 @@ function Transactions() {
                             onClick={() =>
                                 fetchTransactions(1)
                             }
-                            className="bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700"
+                            className="cursor-pointer bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700"
                         >
                             Apply Filters
                         </button>
@@ -390,7 +390,7 @@ function Transactions() {
 
                                         <button
                                             onClick={() => handleEdit(transaction)}
-                                            className="p-2 rounded-lg text-blue-500 hover:bg-blue-100 hover:text-blue-700 transition"
+                                            className="cursor-pointer p-2 rounded-lg text-blue-500 hover:bg-blue-100 hover:text-blue-700 transition"
                                             title="Edit Transaction"
                                         >
                                             <FaEdit size={18} />
@@ -399,7 +399,7 @@ function Transactions() {
                                             onClick={() =>
                                                 handleDelete(transaction.id)
                                             }
-                                            className='p-2 rounded-lg text-red-500 hover:bg-red-100 hover:text-red-700 transition'
+                                            className='cursor-pointer p-2 rounded-lg text-red-500 hover:bg-red-100 hover:text-red-700 transition'
                                             title='Delete Transactions'
                                         >
                                             <FaTrash size={18} />
@@ -434,7 +434,7 @@ function Transactions() {
                         <button
                             disabled={pagination.page === 1}
                             onClick={() => fetchTransactions(pagination.page - 1)}
-                            className='px-4 py-2 border rounded disabled:opacity-50'
+                            className='cursor-pointer px-4 py-2 border rounded disabled:opacity-50'
                         >
                             Previous
                         </button>
@@ -451,7 +451,7 @@ function Transactions() {
                                             index + 1
                                         )
                                     }
-                                    className={`px-4 py-2 rounded ${pagination.page === index + 1
+                                    className={`cursor-pointer px-4 py-2 rounded ${pagination.page === index + 1
                                         ? "bg-blue-600 text-white"
                                         : "border"
                                         }`}
@@ -466,7 +466,7 @@ function Transactions() {
                                 pagination.page === pagination.total_pages
                             }
                             onClick={() => fetchTransactions(pagination.page + 1)}
-                            className='px-4 py-2 border rounded disabled:opacity-50'
+                            className='cursor-pointer px-4 py-2 border rounded disabled:opacity-50'
                         >
                             Next
                         </button>
