@@ -37,7 +37,7 @@ function Navbar() {
 
                     <button
                         onClick={handleLogout}
-                        className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                        className="cursor-pointer flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
                         title="logout"
                     >
                         <FaSignOutAlt
