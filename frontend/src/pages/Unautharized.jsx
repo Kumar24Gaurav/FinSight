@@ -9,7 +9,7 @@ function Unauthorized() {
 
             <div className=" bg-white p-8 rounded-xl shadow text-center ">
 
-                <h1 className="  text-3xl  font-bold  text-red-500  mb-4  ">
+                <h1 className="  text-2xl md:text-3xl  font-bold  text-red-500  mb-4  ">
                     Access Denied
                 </h1>
 

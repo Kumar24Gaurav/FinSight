@@ -205,7 +205,7 @@ function Transactions() {
             <div className="mb-8 flex">
 
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-900">
+                    <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
                         Transactions
                     </h1>
 

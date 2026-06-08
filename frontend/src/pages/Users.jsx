@@ -159,7 +159,7 @@ function Users() {
     return (
 
         <DashboardLayout>
-            <h1 className="text-3xl font-bold mb-6 justify-between items-center flex">
+            <h1 className="text-2xl md:text-3xl font-bold mb-6 justify-between items-center flex">
                 User Management
             </h1>
 

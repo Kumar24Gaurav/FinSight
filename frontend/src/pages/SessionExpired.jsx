@@ -7,7 +7,7 @@ function SessionExpired() {
 
             <div className='bg-white p-8 rounded-2xl shadow text-center'>
 
-                <h1 className='text-3xl font-bold text-red-500 mb-4'>
+                <h1 className='text-2xl md:text-3xl font-bold text-red-500 mb-4'>
                     Session Expired
                 </h1>
 

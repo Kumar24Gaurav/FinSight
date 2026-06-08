@@ -74,7 +74,7 @@ function Dashboard() {
 
             <div className="mb-8">
 
-                <h1 className="text-3xl font-bold text-slate-900">
+                <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
                     Dashboard
                 </h1>
 

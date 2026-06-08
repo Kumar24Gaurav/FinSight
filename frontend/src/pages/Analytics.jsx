@@ -96,7 +96,7 @@ function Analytics() {
             {/* Header */}
             <div className="mb-8">
 
-                <h1 className="text-3xl font-bold text-slate-900">
+                <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
                     Financial Analytics
                 </h1>
 
@@ -177,7 +177,7 @@ function Analytics() {
                         {analytics.top_expense_category.category}
                     </p>
 
-                    <p className="text-3xl font-bold mt-2">
+                    <p className="text-2xlmd:text-3xl font-bold mt-2">
                         ₹{analytics.top_expense_category.amount}
                     </p>
 
