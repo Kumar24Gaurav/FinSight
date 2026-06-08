@@ -361,57 +361,60 @@ function Transactions() {
 
                 </div>
 
-                <table className='w-full'>
-                    <thead className='bg-slate-100'>
+                <div className="overflow-x-auto">
+                    <table className='w-full'>
+                        <thead className='bg-slate-100'>
 
-                        <tr>
-                            <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Date</th>
-                            <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Type</th>
-                            <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Category</th>
-                            <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Amount</th>
-                            <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Description</th>
-                            <th className="p-4 text-left text-xs font-bold text-slate-500 uppercase">Actions</th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-                        {transactions.map((transaction) => (
-
-                            <tr key={transaction.id} className='border-t'>
-                                <td className='p-4'>{transaction.date}</td>
-                                <td className='p-4'>{transaction.type}</td>
-                                <td className='p-4'>{transaction.category}</td>
-                                <td className='p-4'>{transaction.amount}</td>
-                                <td className='p-4'>{transaction.description}</td>
-
-                                <td className='p-4'>
-                                    <div className='flex items-center gap-4'>
-
-                                        <button
-                                            onClick={() => handleEdit(transaction)}
-                                            className="cursor-pointer p-2 rounded-lg text-blue-500 hover:bg-blue-100 hover:text-blue-700 transition"
-                                            title="Edit Transaction"
-                                        >
-                                            <FaEdit size={18} />
-                                        </button>
-                                        <button
-                                            onClick={() =>
-                                                handleDelete(transaction.id)
-                                            }
-                                            className='cursor-pointer p-2 rounded-lg text-red-500 hover:bg-red-100 hover:text-red-700 transition'
-                                            title='Delete Transactions'
-                                        >
-                                            <FaTrash size={18} />
-                                        </button>
-
-                                    </div>
-                                </td>
+                            <tr>
+                                <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Date</th>
+                                <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Type</th>
+                                <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Category</th>
+                                <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Amount</th>
+                                <th className='p-4 text-left text-xs font-bold text-slate-500 uppercase'>Description</th>
+                                <th className="p-4 text-left text-xs font-bold text-slate-500 uppercase">Actions</th>
                             </tr>
 
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+
+                        <tbody>
+                            {transactions.map((transaction) => (
+
+                                <tr key={transaction.id} className='border-t'>
+                                    <td className='p-4'>{transaction.date}</td>
+                                    <td className='p-4'>{transaction.type}</td>
+                                    <td className='p-4'>{transaction.category}</td>
+                                    <td className='p-4'>{transaction.amount}</td>
+                                    <td className='p-4'>{transaction.description}</td>
+
+                                    <td className='p-4'>
+                                        <div className='flex items-center gap-4'>
+
+                                            <button
+                                                onClick={() => handleEdit(transaction)}
+                                                className="cursor-pointer p-2 rounded-lg text-blue-500 hover:bg-blue-100 hover:text-blue-700 transition"
+                                                title="Edit Transaction"
+                                            >
+                                                <FaEdit size={18} />
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    handleDelete(transaction.id)
+                                                }
+                                                className='cursor-pointer p-2 rounded-lg text-red-500 hover:bg-red-100 hover:text-red-700 transition'
+                                                title='Delete Transactions'
+                                            >
+                                                <FaTrash size={18} />
+                                            </button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
 
                 <div className='mt-6'>
 
