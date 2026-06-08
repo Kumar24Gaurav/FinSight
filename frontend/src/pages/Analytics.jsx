@@ -197,7 +197,7 @@ function Analytics() {
 
                     <ResponsiveContainer
                         width="100%"
-                        height={300}
+                        height={250}
                     >
 
                         <BarChart
@@ -245,8 +245,8 @@ function Analytics() {
                     <div className="flex flex-col lg:flex-row items-center justify-between h-full">
 
                         <ResponsiveContainer
-                            width="55%"
-                            height={280}
+                            width="100%"
+                            height={250}
                         >
 
                             <PieChart>
