@@ -1,9 +1,9 @@
 
 import { useNavigate } from "react-router-dom";
 
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt, FaBars } from "react-icons/fa";
 
-function Navbar() {
+function Navbar({ setSidebarOpen }) {
 
     const navigate = useNavigate();
 
@@ -37,15 +37,19 @@ function Navbar() {
 
                     <button
                         onClick={handleLogout}
-                        className="cursor-pointer flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                        className="cursor-pointer flex items-center"
                         title="logout"
                     >
                         <FaSignOutAlt
-                            className="text-white-400 text-xl"
+                            className="text-red-400 text-xl"
                         />
-                        Logout
                     </button>
                 </div>
+                <button className="md:hidden mr-4 text-xl"
+                    onClick={() => setSidebarOpen(true)}
+                >
+                    <FaBars />
+                </button>
             </div>
 
 
