@@ -159,15 +159,17 @@ function Users() {
     return (
 
         <DashboardLayout>
-            <h1 className="text-2xl md:text-3xl font-bold mb-6 justify-between items-center flex">
-                User Management
-            </h1>
+            <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <h1 className="text-2xl md:text-3xl font-bold">
+                    User Management
+                </h1>
+            </div>
 
-            <div className="bg-white rounded-xl shadow overflow-hidden">
+            <div className="bg-white rounded-xl shadow overflow-x-auto">
 
                 <div className="bg-white rounded-2xl shadow overflow-hidden">
 
-                    <table className="w-full">
+                    <table className="w-full min-w-[640px]">
 
                         <thead className="bg-slate-50">
 

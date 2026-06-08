@@ -177,7 +177,7 @@ function Analytics() {
                         {analytics.top_expense_category.category}
                     </p>
 
-                    <p className="text-2xlmd:text-3xl font-bold mt-2">
+                    <p className="text-2xl md:text-3xl font-bold mt-2">
                         ₹{analytics.top_expense_category.amount}
                     </p>
 

@@ -11,35 +11,33 @@ function DashboardLayout({ children }) {
 
     return (
 
-        <div className="flex">
-            {/**Desktop sidebar */}
+        <div className="flex min-h-screen bg-slate-100">
+            {/** Desktop sidebar */}
             <div className="hidden md:block">
-                <Sidebar className="w-64 bg-slate-900 text-white h-full p-5" />
+                <Sidebar className="h-full" />
             </div>
 
-            {/**Mobile Sidebar */}
-            {
-                sidebarOpen && (
+            {/** Mobile sidebar overlay */}
+            {sidebarOpen && (
+                <div
+                    className="fixed inset-0 z-50 bg-black/50 md:hidden"
+                    onClick={() => setSidebarOpen(false)}
+                >
                     <div
-                        className="fixed inset-0 z-50 bg-black/50 md:hidden"
-                        onClick={() => setSidebarOpen(false)}
+                        className="absolute left-0 top-0 h-full w-64"
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="w-64"
-                            onClick={(e) => e.stopPropagation()}>
-                            <Sidebar className="w-64 bg-slate-900 text-white h-full p-5" />
-                        </div>
-
+                        <Sidebar className="h-full" />
                     </div>
-                )
-            }
+                </div>
+            )}
 
             <div className="flex-1 bg-slate-100 min-h-screen">
                 <Navbar setSidebarOpen={setSidebarOpen} />
-                <div className="p-6 md:p-6">
+                <main className="px-4 py-6 sm:px-6 lg:px-8">
                     {children}
-                </div>
+                </main>
             </div>
-
         </div>
     );
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { FaRocket, FaTachometerAlt, FaExchangeAlt, FaChartPie, FaUser } from "react-icons/fa";
 
-function Sidebar() {
+function Sidebar({ className = "" }) {
 
     const user = JSON.parse(
         localStorage.getItem("user")
@@ -13,7 +13,7 @@ function Sidebar() {
 
     return (
 
-        <div className="w-64 bg-slate-900 text-white min-h-screen p-5">
+        <div className={`w-64 bg-slate-900 text-white min-h-screen p-5 ${className}`}>
             <div className="flex items-center gap-3">
                 <FaRocket className="text-4xl text-blue-500 mb-4" />
                 <h1 className="text-2xl font-bold mb-8">
