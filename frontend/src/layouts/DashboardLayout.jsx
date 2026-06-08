@@ -11,10 +11,10 @@ function DashboardLayout({ children }) {
 
     return (
 
-        <div className="flex min-h-screen">
+        <div className="flex">
             {/**Desktop sidebar */}
             <div className="hidden md:block">
-                <Sidebar />
+                <Sidebar className="w-64 bg-slate-900 text-white h-full p-5" />
             </div>
 
             {/**Mobile Sidebar */}
@@ -26,7 +26,7 @@ function DashboardLayout({ children }) {
                     >
                         <div className="w-64"
                             onClick={(e) => e.stopPropagation()}>
-                            <Sidebar />
+                            <Sidebar className="w-64 bg-slate-900 text-white h-full p-5" />
                         </div>
 
                     </div>
