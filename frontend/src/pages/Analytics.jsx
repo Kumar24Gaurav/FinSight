@@ -189,7 +189,7 @@ function Analytics() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                 {/* Monthly Trend */}
-                <div className="bg-white p-6 rounded-xl shadow h-[420px]">
+                <div className="bg-white p-6 rounded-xl shadow">
 
                     <h2 className="text-xl font-semibold mb-4">
                         Monthly Trend
@@ -236,17 +236,17 @@ function Analytics() {
                 </div>
 
                 {/* Expense Breakdown */}
-                <div className="bg-white p-6 rounded-xl shadow h-[420px]">
+                <div className="bg-white p-6 rounded-xl shadow">
 
                     <h2 className="text-xl font-semibold mb-4">
                         Expense Breakdown
                     </h2>
 
-                    <div className="flex flex-col lg:flex-row items-center justify-between h-full">
+                    <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
 
                         <ResponsiveContainer
                             width="100%"
-                            height={300}
+                            height={220}
                         >
 
                             <PieChart>
@@ -255,8 +255,8 @@ function Analytics() {
                                     data={analytics.category_breakdown}
                                     dataKey="amount"
                                     nameKey="category"
-                                    innerRadius={55}
-                                    outerRadius={85}
+                                    innerRadius={40}
+                                    outerRadius={65}
                                     paddingAngle={3}
                                 >
 
@@ -282,14 +282,14 @@ function Analytics() {
 
                         </ResponsiveContainer>
 
-                        <div className="space-y-3">
+                        <div className="space-y-3 w-full">
 
                             {analytics.category_breakdown.map(
                                 (item, index) => (
 
                                     <div
                                         key={index}
-                                        className="flex items-center justify-between gap-6"
+                                        className="flex items-center justify-between w-full"
                                     >
 
                                         <div className="flex items-center gap-2">
